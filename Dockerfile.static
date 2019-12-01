@@ -15,7 +15,7 @@ COPY ./ /conteco/repo/
 ##### END image/Dockerfile/conteco #####
 
 ##### BEGIN image/Dockerfile/build-instructions #####
-ENV CONTECO_ENTRYPOINT "/entrypoint.sh"
+ENV CONTECO_ENTRYPOINT "/conteco/bin/traefik/base/entrypoint"
 COPY ./conteco/configs/etc/traefik/traefik.yml /etc/traefik/traefik.yml
 ##### END image/Dockerfile/build-instructions #####
 

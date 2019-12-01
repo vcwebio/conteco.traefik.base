@@ -2,24 +2,24 @@
 version: '3'
 services:
 
-# START SERVICE nginx.base
-  nginx:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.nginx.base:1.17.3
-    environment: [${CONTECO_DC_NGINX_BASE_ENVIRONMENT}] 
-    command: [${CONTECO_DC_NGINX_BASE_COMMAND}]
-    volumes: [${CONTECO_DC_NGINX_BASE_VOLUMES}]
-    ports: [${CONTECO_DC_NGINX_BASE_PORTS}]
-    networks: [${CONTECO_DC_NGINX_BASE_NETWORKS}]
+# START SERVICE traefik.base
+  traefik:
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.traefik.base:v2.1
+    environment: [] 
+    command: []
+    volumes: [/var/run/docker.sock:/var/run/docker.sock]
+    ports: [${CONTECO_DC_TRAEFIK_PORTS}]
+    networks: [${CONTECO_DC_TRAEFIK_NETWORKS}]
     deploy:
-      mode: ${CONTECO_DC_NGINX_BASE_DEPLOY_MODE}
+      mode: replicated
       resources: 
         limits: 
-          cpus: '${CONTECO_DC_NGINX_BASE_DEPLOY_RESOURCES_LIMITS_CPUS}'
-          memory: '${CONTECO_DC_NGINX_BASE_DEPLOY_RESOURCES_LIMITS_MEMORY}'
+          cpus: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_LIMITS_CPUS}'
+          memory: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_LIMITS_MEMORY}'
         reservations:
-          cpus: '${CONTECO_DC_NGINX_BASE_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
-          memory: '${CONTECO_DC_NGINX_BASE_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-# END SERVICE nginx.base
+          cpus: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
+          memory: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
+# END SERVICE traefik.base
 
 volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
 networks: {${CONTECO_DC_GLOBAL_NETWORKS}}
