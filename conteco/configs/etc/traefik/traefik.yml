@@ -3,9 +3,13 @@
 # Docker configuration backend
 providers:
   docker:
-    defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
+#    defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
+#    endpoint: "unix:///var/run/docker.sock"
+#    domain: "docker.localhost"
+    watch: true
+    swarmmode: true
+    exposedbydefault: true
 
 # API and dashboard configuration
 api:
   insecure: true
-  
