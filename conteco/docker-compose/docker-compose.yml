@@ -8,8 +8,8 @@ services:
     environment: []
     command: []
     volumes: [/var/run/docker.sock:/var/run/docker.sock]
-    ports: [${CONTECO_DC_TRAEFIK_PORTS}]
-    networks: [${CONTECO_DC_TRAEFIK_NETWORKS}]
+    ports: [80:80,8080:8080]
+    networks: [conteco_overlay]
     deploy:
       mode: replicated
       resources:
@@ -19,8 +19,8 @@ services:
         reservations:
           cpus: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_RESERVATIONS_CPUS}'
           memory: '${CONTECO_DC_TRAEFIK_DEPLOY_RESOURCES_RESERVATIONS_MEMORY}'
-      labels: [${CONTECO_DC_TRAEFIK_DEPLOY_LABELS}]
+      labels: []
 # END SERVICE traefik.base
 
-volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
-networks: {${CONTECO_DC_GLOBAL_NETWORKS}}
+volumes: {}
+networks: {conteco_overlay: { external: true }}
