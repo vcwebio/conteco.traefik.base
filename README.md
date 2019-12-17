@@ -1,11 +1,10 @@
-# The Conteco Traefik base
+# `traefik.base` - Conteco
 
-The Traefik base image.
+Traefik Base image, using default configuration.
 
-## Modifications
+## Configuration Changes
 
-`output-to-JSON`  
-Override to reshape JSON or parse text log.
+None.
 
 ## Tags
 

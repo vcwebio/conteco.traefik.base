@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-export CONTECO_LABEL="Conteco Traefik base"
-export CONTECO_DESCRIPTION="The Traefik base image."
+export CONTECO_LABEL="traefik.base - Conteco"
+export CONTECO_DESCRIPTION="Traefik Base image, using default configuration."
 
 export CONTECO_TYPE="traefik"
 export CONTECO_NAME="base"
