@@ -4,10 +4,10 @@ services:
 
 # START SERVICE traefik.base
   traefik:
-    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/${CONTECO_ECOSYSTEM}.traefik.base:v2.1
+    image: ${CONTECO_REGISTRY}${CONTECO_REALM}/conteco.traefik.base:v2.1
     environment: []
     command: []
-    volumes: [${CONTECO_DC_TRAEFIK_VOLUMES}]
+    volumes: [/var/run/docker.sock:/var/run/docker.sock]
     ports: [${CONTECO_DC_TRAEFIK_PORTS}]
     networks: [conteco_overlay]
     deploy:
@@ -22,5 +22,5 @@ services:
       labels: [${CONTECO_DC_TRAEFIK_DEPLOY_LABELS}]
 # END SERVICE traefik.base
 
-volumes: {${CONTECO_DC_GLOBAL_VOLUMES}}
+volumes: {}
 networks: {conteco_overlay: { external: true }}
