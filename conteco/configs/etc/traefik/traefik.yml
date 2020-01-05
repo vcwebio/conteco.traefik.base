@@ -1,14 +1,16 @@
 ## traefik.yml
+entrypoints:
+  conteco:
+    address: ":80"
 
 # Docker configuration backend
 providers:
   docker:
-#    defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
-#    endpoint: "unix:///var/run/docker.sock"
-#    domain: "docker.localhost"
+    defaultRule: "Host(`{{ trimPrefix `/` .Name }}.docker.localhost`)"
     watch: true
-    swarmmode: true
-    exposedbydefault: true
+    swarmMode: true
+    exposedByDefault: false
+    network: conteco_overlay
 
 # API and dashboard configuration
 api:
