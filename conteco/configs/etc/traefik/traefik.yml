@@ -12,14 +12,8 @@ providers:
     watch: true
     swarmMode: true
     exposedByDefault: false
-    network: ${CONTECO_ECOSYSTEM_RUNTIME}_overlay
+    network: ${CONTECO_ECOSYSTEM}_overlay
 
 # API and dashboard configuration
 api:
   insecure: true
-ping:
-  entrypoint: traefik
-metrics:
-  prometheus:
-    entryPoint: traefik
-    buckets: [0.1,0.3,1.2,5.0]
