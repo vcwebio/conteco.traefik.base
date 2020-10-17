@@ -5,7 +5,7 @@ export CONTECO_DESCRIPTION="Traefik Base image, using default configuration."
 
 export CONTECO_TYPE="traefik"
 export CONTECO_NAME="base"
-export CONTECO_TAG="v2.1"
+export CONTECO_TAG="v2.3.1"
 
 export CONTECO_BASE="external.traefik:v2.1"
 export CONTECO_BUILD="image-base"
