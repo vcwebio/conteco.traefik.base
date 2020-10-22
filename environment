@@ -7,5 +7,6 @@ export CONTECO_TYPE="traefik"
 export CONTECO_NAME="base"
 export CONTECO_TAG="v2.3.1"
 
-export CONTECO_BASE="external.traefik:v2.1"
 export CONTECO_BUILD="image-base"
+
+export CONTECO_EXTERNAL_IMAGE_NAME="traefik:v2.3.1"
